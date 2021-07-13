@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>LoRaWAN &mdash; Sicheres Klassenzimmer v0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/twemoji.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+        <script src="../_static/twemoji.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Sicheres Klassenzimmer" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Sicheres Klassenzimmer
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LoRaWAN</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#abschatzung-gateway-traffic">Abschätzung Gateway Traffic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#schulen-und-sensorknoten">Schulen und Sensorknoten</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pilotphase">Pilotphase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nach-der-pilotphase">Nach der Pilotphase</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sensordatenstrome">Sensordatenströme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zusatzlicher-traffic-zwischen-gateway-und-netzwerkserver">Zusätzlicher Traffic zwischen Gateway und Netzwerkserver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#abschatzung-traffic">Abschätzung Traffic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zusammenfassung">Zusammenfassung</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sicheres Klassenzimmer</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>LoRaWAN</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/lorawan/lorawan.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lorawan">
+<span id="index-0"></span><h1>LoRaWAN<a class="headerlink" href="#lorawan" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="abschatzung-gateway-traffic">
+<span id="index-1"></span><h2>Abschätzung Gateway Traffic<a class="headerlink" href="#abschatzung-gateway-traffic" title="Permalink to this headline">¶</a></h2>
+<p>Die Abschätzung erfolgt auf Basis folgender Eingangsparameter.</p>
+<div class="section" id="schulen-und-sensorknoten">
+<h3>Schulen und Sensorknoten<a class="headerlink" href="#schulen-und-sensorknoten" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="pilotphase">
+<h4>Pilotphase<a class="headerlink" href="#pilotphase" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>30 - 40 Schulen 🏫 mit jeweils 4 Klassenzimmern pro Schule und einem
+Sensorknoten pro Klassenzimmer ➡️</p>
+<ul>
+<li><p>30 - 40 Gateways</p></li>
+<li><p>120 - 150 Sensorknoten</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="nach-der-pilotphase">
+<h4>Nach der Pilotphase<a class="headerlink" href="#nach-der-pilotphase" title="Permalink to this headline">¶</a></h4>
+<p>Es kommen weitere Schulen 🏫 und u.U. Kitas 👶 mit dazu.</p>
+<ul class="simple">
+<li><p>30 - 40 Schulen mit jeweils 4 Klassenzimmern pro Schulen</p>
+<ul>
+<li><p>30 - 40 Gateways</p></li>
+<li><p>120 - 150 Sensorknoten</p></li>
+</ul>
+</li>
+<li><p>Kitas</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="sensordatenstrome">
+<h3>Sensordatenströme<a class="headerlink" href="#sensordatenstrome" title="Permalink to this headline">¶</a></h3>
+<p>Folgende Tabelle enthält die Datenstrome die vom Sensorknoten zum
+Gateway über das LoRa-Netz gesendet werden. Für die Abschätzung der Datengröße
+wurde das <a class="reference external" href="https://developers.mydevices.com/cayenne/docs/lora/#lora-cayenne-low-power-payload">CayenneLPP</a> Payload-Format verwendet. Hier fallen pro Datenstrom
+zusätzlich 2 Bytes für den Datenkanal und den Datentyp an.</p>
+<table class="docutils align-default" id="lorawan-tab-1">
+<caption><span class="caption-number">Tab. 1 </span><span class="caption-text">Sensordatenströme - Sensorknoten ➡️ Gateway</span><a class="headerlink" href="#lorawan-tab-1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Einheit</p></th>
+<th class="head"><p>Datentyp</p></th>
+<th class="head"><p>Größe (CayenneLPP)</p></th>
+<th class="head"><p>Sendefrequenz</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Temperatur</p></td>
+<td><p>°C</p></td>
+<td><p>float</p></td>
+<td><p>4 B</p></td>
+<td><p>1 / min</p></td>
+</tr>
+<tr class="row-odd"><td><p>rel. Luftfeuchte</p></td>
+<td><p>%H</p></td>
+<td><p>float</p></td>
+<td><p>4 B</p></td>
+<td><p>1 / min</p></td>
+</tr>
+<tr class="row-even"><td><p>CO2-Konzentration</p></td>
+<td><p>ppm</p></td>
+<td><p>u_int16</p></td>
+<td><p>4 B</p></td>
+<td><p>1 / min</p></td>
+</tr>
+<tr class="row-odd"><td><p>Beleuchtungsstärke</p></td>
+<td><p>lm</p></td>
+<td><p>u_int16</p></td>
+<td><p>4 B</p></td>
+<td><p>1 / min</p></td>
+</tr>
+<tr class="row-even"><td><p>Bewegung</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>4 B (Annahme)</p></td>
+<td><p>1 / min</p></td>
+</tr>
+<tr class="row-odd"><td><p>Batteriespannung</p></td>
+<td><p>V</p></td>
+<td><p>float</p></td>
+<td><p>4 B</p></td>
+<td><p>1 / 15 min</p></td>
+</tr>
+<tr class="row-even"><td><p>Batterie Ladestatus (optional)</p></td>
+<td></td>
+<td><p>u_int8</p></td>
+<td><p>1 B</p></td>
+<td><p>1 / 15 min</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Summe</strong></p></td>
+<td></td>
+<td></td>
+<td><p><span class="math notranslate nohighlight">\(25\ B + (7 \cdot 2\ B) = 39\ B\)</span></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><em>Worst Case</em></p></td>
+<td></td>
+<td></td>
+<td><p><em>50 B</em></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="zusatzlicher-traffic-zwischen-gateway-und-netzwerkserver">
+<h3>Zusätzlicher Traffic zwischen Gateway und Netzwerkserver<a class="headerlink" href="#zusatzlicher-traffic-zwischen-gateway-und-netzwerkserver" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>~ 500 MB / Monat für Statusmeldungen, nach <a class="reference external" href="https://www.thethingsnetwork.org/forum/t/what-is-the-maximum-data-output-of-a-lorawan-gateway/6525/10">TTN Forum</a></p></li>
+<li><p>Overhead pro Datenpaket</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Bei der Verwendung der Community-Lösung TTN werden auch Datenpakete
+von anderen Netzwerkteilnehmern empfangen und ggf. geroutet, was zusätzlichen
+Traffic verursacht. Da die Datenmenge aus LoRaWAN-Paketen relativ klein ist
+(vgl. <a class="reference internal" href="#lorawan-tab-1"><span class="std std-numref">Tab. 1</span></a>, <a class="reference internal" href="#lorawan-tab-2"><span class="std std-numref">Tab. 2</span></a>)</p>
+</div>
+<p>Folgende Datenströme fallen zusätzlich vom Gateway in die Cloud an und werden
+via LTE übermittelt.
+Hier ist die Abschätzung der Datenmengen abhängig vom verwendeten Format/Protokoll,
+das zwischen Gateway und Netzwerkserver eingesetzt wird.</p>
+<table class="docutils align-left" id="lorawan-tab-2">
+<caption><span class="caption-number">Tab. 2 </span><span class="caption-text">Sensordatenströme - Gateway ➡️ Netzwerkserver</span><a class="headerlink" href="#lorawan-tab-2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Einheit</p></th>
+<th class="head"><p>Datentyp</p></th>
+<th class="head"><p>Größe</p></th>
+<th class="head"><p>Sendefrequenz</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SNR</p></td>
+<td><p>dB</p></td>
+<td><p>float</p></td>
+<td><p>?</p></td>
+<td><p>1 / min</p></td>
+</tr>
+<tr class="row-odd"><td><p>RSSI</p></td>
+<td></td>
+<td><p>int16</p></td>
+<td><p>?</p></td>
+<td><p>1 / min</p></td>
+</tr>
+<tr class="row-even"><td><p>CodingRate</p></td>
+<td></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>1 / min</p></td>
+</tr>
+<tr class="row-odd"><td><p>Spreading Factor</p></td>
+<td></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>1 / min</p></td>
+</tr>
+<tr class="row-even"><td><p>Counter</p></td>
+<td></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>1 / min</p></td>
+</tr>
+<tr class="row-odd"><td><p>Timestamps</p></td>
+<td></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>1 / min</p></td>
+</tr>
+<tr class="row-even"><td><p>weitere Daten</p></td>
+<td></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>1 / min</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Summe</strong></p></td>
+<td></td>
+<td></td>
+<td><p><strong>? B</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><em>Worst Case</em></p></td>
+<td></td>
+<td></td>
+<td><p><em>2-5 kB</em></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Für die folgende Abschätzung des Overhead ist exemplarisch ein Datenpaket,
+das von einem TTN-Netzwerkserver empfangen wurde abgebildet.</p>
+<div class="literal-block-wrapper docutils container" id="lorawan-lst1">
+<div class="code-block-caption"><span class="caption-number">Src. 1 </span><span class="caption-text">Beispiel Paket LoRaWAN von einem TTN Netwerkserver v3. Größe ~ 1.9 kB.</span><a class="headerlink" href="#lorawan-lst1" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;end_device_ids&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;device_id&quot;</span><span class="p">:</span> <span class="s2">&quot;testmigrate&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;application_ids&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;application_id&quot;</span><span class="p">:</span> <span class="s2">&quot;testmigrate&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;dev_eui&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;join_eui&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;dev_addr&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxx&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;correlation_ids&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;as:up:xxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gs:conn:xxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gs:up:host:xxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gs:uplink:xxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ns:uplink:xxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rpc:/ttn.lorawan.v3.GsNs/HandleUplink:xxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rpc:/ttn.lorawan.v3.NsAs/HandleUplink:xxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;received_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-07-13T13:18:00.884688458Z&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;uplink_message&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_key_id&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxx==&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;f_port&quot;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span>
+    <span class="nt">&quot;f_cnt&quot;</span><span class="p">:</span> <span class="mi">41097</span><span class="p">,</span>
+    <span class="nt">&quot;frm_payload&quot;</span><span class="p">:</span> <span class="s2">&quot;AWcA7QJoaQ==&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;decoded_payload&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;relative_humidity_2&quot;</span><span class="p">:</span> <span class="mf">52.5</span><span class="p">,</span>
+      <span class="nt">&quot;temperature_1&quot;</span><span class="p">:</span> <span class="mf">23.7</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;rx_metadata&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;gateway_ids&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;gateway_id&quot;</span><span class="p">:</span> <span class="s2">&quot;eui-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;eui&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-07-13T13:18:00.566524Z&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="mi">182170500</span><span class="p">,</span>
+      <span class="nt">&quot;rssi&quot;</span><span class="p">:</span> <span class="mi">-57</span><span class="p">,</span>
+      <span class="nt">&quot;channel_rssi&quot;</span><span class="p">:</span> <span class="mi">-57</span><span class="p">,</span>
+      <span class="nt">&quot;snr&quot;</span><span class="p">:</span> <span class="mf">9.2</span><span class="p">,</span>
+      <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;latitude&quot;</span><span class="p">:</span> <span class="mf">48.149111649989585</span><span class="p">,</span>
+        <span class="nt">&quot;longitude&quot;</span><span class="p">:</span> <span class="mf">11.568093895912172</span><span class="p">,</span>
+        <span class="nt">&quot;altitude&quot;</span><span class="p">:</span> <span class="mi">516</span><span class="p">,</span>
+        <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;SOURCE_REGISTRY&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;uplink_token&quot;</span><span class="p">:</span> <span class="s2">&quot;CiIKIAoUZXVpLWI4MjdlYmZmZmUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxDAiIpbaHBhDN55mWAiCg99TRppOiAQ==&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;channel_index&quot;</span><span class="p">:</span> <span class="mi">7</span>
+    <span class="p">}],</span>
+    <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;data_rate&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;lora&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;bandwidth&quot;</span><span class="p">:</span> <span class="mi">125000</span><span class="p">,</span>
+          <span class="nt">&quot;spreading_factor&quot;</span><span class="p">:</span> <span class="mi">7</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;data_rate_index&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="nt">&quot;coding_rate&quot;</span><span class="p">:</span> <span class="s2">&quot;4/5&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;frequency&quot;</span><span class="p">:</span> <span class="s2">&quot;867900000&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="mi">182170500</span><span class="p">,</span>
+      <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-07-13T13:18:00.566524Z&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;received_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-07-13T13:18:00.585238687Z&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;confirmed&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;consumed_airtime&quot;</span><span class="p">:</span> <span class="s2">&quot;0.056576s&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="abschatzung-traffic">
+<h3>Abschätzung Traffic<a class="headerlink" href="#abschatzung-traffic" title="Permalink to this headline">¶</a></h3>
+<p class="rubric">Pakete pro Monat pro Gateway</p>
+<div class="math notranslate nohighlight">
+\[31\ \frac{d}{Monat} \cdot 4\ Nodes \cdot 60 \cdot 24\ \frac{min}{d} = 178.560\ \frac{Pakete}{Monat}\]</div>
+<p class="rubric">Datenvolumen pro Paket</p>
+<div class="math notranslate nohighlight">
+\[50\ B + 2\ kB\ \frac{Overhead}{Paket} = 2098\ \frac{B}{Paket} = 2.05\ \frac{kB}{Paket}\]</div>
+<p class="rubric">Datenvolumen Sensordaten pro Monat pro Gateway</p>
+<div class="math notranslate nohighlight">
+\[2.05\ \frac{kB}{Paket} \cdot 178.560\ \frac{Pakete}{Monat} = 358\ \frac{MB}{Monat}\]</div>
+<p class="rubric">Datenvolumen Sensordaten + Overhead pro Monat pro Gateway</p>
+<div class="math notranslate nohighlight">
+\[358\ \frac{MB}{Monat} + 500\ \frac{MB}{Monat} = 858\ \frac{MB}{Monat}\]</div>
+</div>
+<div class="section" id="zusammenfassung">
+<h3>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">¶</a></h3>
+<p>Die Abschätzung zeigt, dass das Datenvolumen in erster Linie vom Overhead zwischen
+Gateway und Netzwerkserver abhängt. Das Datenvolumen der reinen Sensordaten ist
+auch bei einem Datenpaket pro Minute relativ gering (~300 - 400 MB pro Monat und
+Gateway). Der Overhead den ein Gateway pro Datenpaket und paketunabhängig erzeugt
+ist schwer abzuschätzen und hängt stark von den verwendeten Protokollen, Formaten
+und Metadaten ab. Eine Datentarif mit einem max. Volumen von 2 GB kostet aktuell
+ca. 4 - 6 € (siehe <a class="reference external" href="https://handytarife.check24.de/vergleich/datentarife?context=datatariffs&amp;network_tmobile=yes&amp;network_vodafone=yes&amp;network_o2=yes&amp;data_included=2000&amp;minutes_included=all&amp;rnp=egal&amp;tariff_type=all&amp;select_contract=-24&amp;data_speed=0&amp;maximum_effective_price=egal&amp;provider_restriction=&amp;5g=no&amp;young_tariff=no&amp;tariff_activation_date=no&amp;hardware_nature=40&amp;with_data_tariffs=all&amp;only_bookable_tariffs=no&amp;fixed_traffic_automatic=egal&amp;sms_included=all">hier</a>).</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Sicheres Klassenzimmer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Bruno Willenborg.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
