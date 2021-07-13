@@ -16,11 +16,11 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import sphinx_rtd_theme
-import subprocess
+# import subprocess
 
-committime = subprocess.check_output(["git", "show",  "-s",  "--format=%cd",  "--date=local",  "HEAD"]).strip()
+# committime = subprocess.check_output(["git", "show",  "-s",  "--format=%cd",  "--date=local",  "HEAD"]).strip()
 # commithash = subprocess.check_output(["git",  "log",  "-1", '--format=%h' ]).strip()
-latesttag = subprocess.check_output(["git",  "describe", "--tags"]).strip()
+# latesttag = subprocess.check_output(["git",  "describe", "--tags"]).strip()
 
 # -- Project information -----------------------------------------------------
 
@@ -29,11 +29,13 @@ copyright = u'2021, Bruno Willenborg'
 author = u'Bruno Willenborg'
 
 # The short X.Y version
-version =  committime.decode("utf-8") + ' ' + latesttag.decode("utf-8")
+# version =  committime.decode("utf-8") + ' ' + latesttag.decode("utf-8")
 #   + '#' +  commithash.decode("utf-8")
+version = u'v0.0.1'
 
 # The full version, including alpha/beta/rc tags
-release = latesttag.decode("utf-8")
+release = u'v0.0.1'
+# release = latesttag.decode("utf-8")
 
 # -- General configuration ---------------------------------------------------
 
