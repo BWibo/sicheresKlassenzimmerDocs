@@ -218,7 +218,11 @@ Gateway und Netzwerkserver abhängt. Das Datenvolumen der reinen Sensordaten ist
 auch bei einem Datenpaket pro Minute relativ gering (~300 - 400 MB pro Monat und
 Gateway). Der Overhead den ein Gateway pro Datenpaket und paketunabhängig erzeugt
 ist schwer abzuschätzen und hängt stark von den verwendeten Protokollen, Formaten
-und Metadaten ab. Eine Datentarif mit einem max. Volumen von 2 GB kostet aktuell
+und Metadaten ab. Je nach Gatewaymodell und der Menge an Overhead die der Gateway
+verbraucht, wäre eine Datentarif mit 2 GB pro Monat möglicherweise ausreichend.
+Diese Abschätzung unterliegt allerdings noch größeren Unsicherheiten und ist mit
+Vorsicht zu genießen.
+Ein LTE-Datentarif mit einem max. Volumen von 2 GB kostet aktuell
 ca. 4 - 6 € (siehe `hier <check24_lte_>`_).
 
 .. References #################################################################
