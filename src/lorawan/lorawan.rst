@@ -18,7 +18,8 @@ Schulen und Sensorknoten
 Pilotphase
 -------------------------------------------------------------------------------
 
-* 30 - 40 Schulen |:school:| mit jeweils 4 Klassenzimmern pro Schule
+* 30 - 40 Schulen |:school:| mit jeweils 4 Klassenzimmern pro Schule und einem
+  Sensorknoten pro Klassenzimmer |:arrow_right:|
 
   * 30 - 40 Gateways
   * 120 - 150 Sensorknoten
@@ -28,14 +29,14 @@ Nach der Pilotphase
 
 Es kommen weitere Schulen |:school:| und u.U. Kitas |:baby:| mit dazu.
 
-* 30 - 40 Schulen mit jeweils 4 Klassenzimmern pro Schule
+* 30 - 40 Schulen mit jeweils 4 Klassenzimmern pro Schulen
 
   * 30 - 40 Gateways
   * 120 - 150 Sensorknoten
 
 * Kitas
 
-Sensordatenströme |:part_alternation_mark:|
+Sensordatenströme
 ===============================================================================
 
 Folgende Tabelle enthält die Datenstrome die vom Sensorknoten zum
