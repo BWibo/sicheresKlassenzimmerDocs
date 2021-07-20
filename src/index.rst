@@ -2,11 +2,14 @@
 Sicheres Klassenzimmer
 ###############################################################################
 
+Welcome to the IoT-Test Stack for the proejct *Sicheres Klassenzimmer*.
+
 .. toctree::
   :maxdepth: 3
   :caption: Contents:
 
   lorawan/lorawan
+  test-stack/test.stack
 
 *******************************************************************************
 Indices and tables
