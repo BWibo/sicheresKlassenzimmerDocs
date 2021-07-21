@@ -9,8 +9,16 @@ Klassenzimmer*. Die Infrastruktur ist vollständig auf Basis von Docker Containe
 realisiert und kann daher sehr einfach in jeder gängigen Cloudplattform oder
 auf eigener Hardware ausgerollt und instandgehalten werden.
 
-.. note:: Die im Folgeden aufgeführten Dienste sind zum Testen gedacht.
+.. note:: Die im Folgenden aufgeführten Dienste sind zum Testen gedacht.
   Keine Sorge, es kann nichts kaputt gehen, bitte einfach experimentieren!!
+
+  Um das Testen zu erleichtern sind die Dienste sind **nicht abgesichert**,
+  und frei im WWW erreichbar. Daher bitte keine schützenswerten Daten
+  (z.B. personenbezogene Daten) verwenden.
+
+  Es werden keine Backups der Daten/Konfigurationen usw. gemacht und die Dienste können
+  **jederzeit ohne Ankündigung zurückgesetzt** werden. Daher bitte selbstständig
+  Backups/Exporte anfertigen.
 
   Bei Fragen/Problem bitte einfach melden.
 
