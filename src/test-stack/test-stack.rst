@@ -7,8 +7,12 @@ Testumgebung für SiKla
 Diese Seite beschreibt die IoT-Testinfrastruktur für das Projekt *Sicheres
 Klassenzimmer*. Die Infrastruktur ist vollständig auf Basis von Docker Container
 realisiert und kann daher sehr einfach in jeder gängigen Cloudplattform oder
-auf eigener Hardware ausgerollt werden.
+auf eigener Hardware ausgerollt und instandgehalten werden.
 
+.. note:: Die im Folgeden aufgeführten Dienste sind zum Testen gedacht.
+  Keine Sorge, es kann nichts kaputt gehen, bitte einfach experimentieren!!
+
+  Bei Fragen/Problem bitte einfach melden.
 
 .. rubric:: Ansprechpartner
 
@@ -24,7 +28,7 @@ auf eigener Hardware ausgerollt werden.
 *******************************************************************************
  Übersicht
 *******************************************************************************
-Die Infrastruktur setzt nach einem LoRaWAN-Netwerkserver (egal von welchem Provider)
+Die Infrastruktur setzt nach einem LoRaWAN-Netzwerkserver (egal von welchem Provider)
 an und bietet die folgenden Funktionen:
 
 * Anbindung von beliebigen Netzwerkprovidern, auch Multiproviderlösungen sind möglich.
@@ -39,7 +43,8 @@ Mit :ref:`test-stack/test-stack:Node-RED` werden die Daten zur SensorThingsAPI k
 im :ref:`test-stack/test-stack:FROST-Server` gespeichert. Von dort können die Daten
 mit standardisierten Request abgefragt werden und z.B. mit :ref:`test-stack/test-stack:Grafana`
 visualisiert werden. Alle Dienste sind dabei via Single-SignOn durch :ref:`test-stack/test-stack:Keycloak`
-und HTTPS abgesichert. :numref:`iot-overview`
+und HTTPS abgesichert. :numref:`iot-overview` zeigt schematisch die hier beschriebene Systemarchitektur für
+LoRaWAN-Sensorknoten.
 
 .. figure:: ../img/iot-architecture.png
   :width: 98 %
@@ -48,6 +53,9 @@ und HTTPS abgesichert. :numref:`iot-overview`
   :alt: IoT Infrastructure Overview
 
   Übersicht über die LoRaWAN Sensordateninfrastruktur.
+
+Die einzelnen Dienste sind im folgenden knapp beschrieben. Zu jedem Dienst gibt es eine laufende
+Testinstanz:
 
 * :ref:`test-stack/test-stack:FROST-Server` |:arrow_right:| https://sikla.gis.lrg.tum.de/test/frost
 * :ref:`test-stack/test-stack:Grafana` |:arrow_right:| https://sikla.gis.lrg.tum.de/test/grafana
