@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Testumgebung für SiKla &mdash; Sicheres Klassenzimmer v0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/twemoji.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+        <script src="../_static/twemoji.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SensorThingsAPI Example entries" href="SensorThingsAPI.html" />
+    <link rel="prev" title="LoRaWAN" href="../lorawan/lorawan.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Sicheres Klassenzimmer
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../lorawan/lorawan.html">LoRaWAN</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lorawan/lorawan.html#abschatzung-gateway-traffic">Abschätzung Gateway Traffic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../lorawan/lorawan.html#schulen-und-sensorknoten">Schulen und Sensorknoten</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lorawan/lorawan.html#pilotphase">Pilotphase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lorawan/lorawan.html#nach-der-pilotphase">Nach der Pilotphase</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lorawan/lorawan.html#sensordatenstrome">Sensordatenströme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lorawan/lorawan.html#zusatzlicher-traffic-zwischen-gateway-und-netzwerkserver">Zusätzlicher Traffic zwischen Gateway und Netzwerkserver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lorawan/lorawan.html#abschatzung-traffic">Abschätzung Traffic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lorawan/lorawan.html#zusammenfassung">Zusammenfassung</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Testumgebung für SiKla</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ubersicht">Übersicht</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#frost-server">FROST-Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#testinstanz-frost-server">Testinstanz FROST-Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="SensorThingsAPI.html">SensorThingsAPI Example entries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#beispielabfragen-fur-die-testinstanz">Beispielabfragen für die Testinstanz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#grafana">Grafana</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#testinstanz-grafana">Testinstanz Grafana</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#node-red">Node-RED</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#testinstanz-node-red">Testinstanz Node-RED</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#keycloak">Keycloak</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#testinstanz-keycloak">Testinstanz Keycloak</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sicheres Klassenzimmer</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Testumgebung für SiKla</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/test-stack/test-stack.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="testumgebung-fur-sikla">
+<span id="index-0"></span><h1>Testumgebung für SiKla<a class="headerlink" href="#testumgebung-fur-sikla" title="Permalink to this headline">¶</a></h1>
+<p>Diese Seite beschreibt die IoT-Testinfrastruktur für das Projekt <em>Sicheres
+Klassenzimmer</em>. Die Infrastruktur ist vollständig auf Basis von Docker Container
+realisiert und kann daher sehr einfach in jeder gängigen Cloudplattform oder
+auf eigener Hardware ausgerollt werden.</p>
+<p class="rubric">Ansprechpartner</p>
+<div class="line-block">
+<div class="line">Bruno Willenborg</div>
+<div class="line">Technische universität München (TUM)</div>
+<div class="line">Lehrstuhl für Geoinformatik</div>
+<div class="line">b.willenborg(at)tum.de</div>
+<div class="line">+49 89 289-22973</div>
+<div class="line"><a class="reference external" href="https://www.asg.ed.tum.de/gis/startseite/">https://www.asg.ed.tum.de/gis/startseite/</a></div>
+</div>
+<div class="section" id="ubersicht">
+<span id="index-1"></span><h2>Übersicht<a class="headerlink" href="#ubersicht" title="Permalink to this headline">¶</a></h2>
+<p>Die Infrastruktur setzt nach einem LoRaWAN-Netwerkserver (egal von welchem Provider)
+an und bietet die folgenden Funktionen:</p>
+<ul class="simple">
+<li><p>Anbindung von beliebigen Netzwerkprovidern, auch Multiproviderlösungen sind möglich.</p></li>
+<li><p>Persistente Speicherung von Sensordaten sowie von Informationen/Metadaten
+zu Sensorkoten, Sensoren, Messgrößen und Datenströmen.</p></li>
+<li><p>Bereitstellung der Daten über die OGC SensorThingsAPI, die mächtige
+Abfrageoptionen für Sensordaten/Metadaten bietet und leicht zu erlernen ist.</p></li>
+<li><p>Alle Softwarekomponenten und Formate sind 🆓 OpenSource ☮️</p></li>
+</ul>
+<p>Die Dienste der Testumgebung empfangen Sensordaten z.B. von einem LoRaWAN-Netzwerkserver.
+Mit <a class="reference internal" href="#node-red"><span class="std std-ref">Node-RED</span></a> werden die Daten zur SensorThingsAPI konvertiert und
+im <a class="reference internal" href="#frost-server"><span class="std std-ref">FROST-Server</span></a> gespeichert. Von dort können die Daten
+mit standardisierten Request abgefragt werden und z.B. mit <a class="reference internal" href="#grafana"><span class="std std-ref">Grafana</span></a>
+visualisiert werden. Alle Dienste sind dabei via Single-SignOn durch <a class="reference internal" href="#keycloak"><span class="std std-ref">Keycloak</span></a>
+und HTTPS abgesichert. <a class="reference internal" href="#iot-overview"><span class="std std-numref">Abb. 1</span></a></p>
+<div class="figure align-center" id="iot-overview">
+<a class="reference internal image-reference" href="../_images/iot-architecture.png"><img alt="IoT Infrastructure Overview" src="../_images/iot-architecture.png" style="width: 98%;" /></a>
+<p class="caption"><span class="caption-number">Abb. 1 </span><span class="caption-text">Übersicht über die LoRaWAN Sensordateninfrastruktur.</span><a class="headerlink" href="#iot-overview" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="#frost-server"><span class="std std-ref">FROST-Server</span></a> ➡️ <a class="reference external" href="https://sikla.gis.lrg.tum.de/test/frost">https://sikla.gis.lrg.tum.de/test/frost</a></p></li>
+<li><p><a class="reference internal" href="#grafana"><span class="std std-ref">Grafana</span></a> ➡️ <a class="reference external" href="https://sikla.gis.lrg.tum.de/test/grafana">https://sikla.gis.lrg.tum.de/test/grafana</a></p></li>
+<li><p><a class="reference internal" href="#node-red"><span class="std std-ref">Node-RED</span></a> ➡️ <a class="reference external" href="https://sikla.gis.lrg.tum.de/test/nodered">https://sikla.gis.lrg.tum.de/test/nodered</a></p></li>
+<li><p><a class="reference internal" href="#keycloak"><span class="std std-ref">Keycloak</span></a> ➡️ <a class="reference external" href="https://sikla.gis.lrg.tum.de/test/auth">https://sikla.gis.lrg.tum.de/test/auth</a></p></li>
+</ul>
+</div>
+<div class="section" id="frost-server">
+<h2>FROST-Server<a class="headerlink" href="#frost-server" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/frost-server-icon.png"><img alt="FROST-Server logo" class="align-right" src="../_images/frost-server-icon.png" style="width: 120px;" /></a>
+<p>Der FROST-Server ist eine Open Source Server-Implementierung der OGC SensorThings API.
+Er ist in Java geschrieben und kann in Tomcat oder Wildfly laufen und ist als
+Docker-Image verfügbar. Zu seinen vielen Funktionen gehört die Möglichkeit,
+String- oder UUID-basierte Entity-IDs zu verwenden. FROST-Server ist ein Akronym
+und steht für <em>Fraunhofer Open Source SensorThingsAPI Server</em>.
+Der Name soll aber auch suggerieren, dass Ihre Daten <em>frisch und verfügbar</em>
+gehalten werden.</p>
+<p class="rubric">Funktionen</p>
+<ul class="simple">
+<li><p>Basiert auf SensorThings API, einem Standard des OGC (OGC ist eines der wichtigsten
+internationalen Standardisierungsgremien für Daten mit Raumbezug)</p></li>
+<li><p>Hohe Leistungsfähigkeit</p></li>
+<li><p>Geringer Ressourcenverbrauch</p></li>
+<li><p>Open Source: Volle Transparenz bei der Software</p>
+<ul>
+<li><p>Offenheit gegenüber Erweiterungen von Anwendern</p></li>
+<li><p>Offene Verfügbarkeit der Software garantiert langfristige Verfügbarkeit und
+ermöglicht strategische Entscheidungen</p></li>
+</ul>
+</li>
+</ul>
+<p class="rubric">Links</p>
+<ul class="simple">
+<li><p>Official website: <a class="reference external" href="https://www.iosb.fraunhofer.de/de/projekte-produkte/frostserver.html">https://www.iosb.fraunhofer.de/de/projekte-produkte/frostserver.html</a></p></li>
+<li><p>Github: <a class="reference external" href="https://github.com/FraunhoferIOSB/FROST-Server">https://github.com/FraunhoferIOSB/FROST-Server</a></p></li>
+<li><p>Documentation: <a class="reference external" href="https://fraunhoferiosb.github.io/FROST-Server/">https://fraunhoferiosb.github.io/FROST-Server/</a></p></li>
+<li><p>OGC SensorWebEnablement Overview: <a class="reference external" href="https://www.ogc.org/node/698">https://www.ogc.org/node/698</a></p></li>
+<li><p>OGC SensorThingsAPI Standard docs: <a class="reference external" href="https://www.ogc.org/standards/sensorthings">https://www.ogc.org/standards/sensorthings</a></p></li>
+<li><p>OGC SensorThingsAPI API Documentation: <a class="reference external" href="https://developers.sensorup.com/docs/">https://developers.sensorup.com/docs/</a></p></li>
+<li><p>SensorThingsAPI Beispiele: <a class="reference external" href="https://fraunhoferiosb.github.io/FROST-Server/sensorthingsapi/1_Home.html">https://fraunhoferiosb.github.io/FROST-Server/sensorthingsapi/1_Home.html</a></p></li>
+</ul>
+<div class="section" id="testinstanz-frost-server">
+<h3>Testinstanz FROST-Server<a class="headerlink" href="#testinstanz-frost-server" title="Permalink to this headline">¶</a></h3>
+<p>In der Testinstanz wurden Beispieleinträge für einen Sensorknoten (<em>Thing</em>) mit
+einem <em>Sensor</em>, der einen phys. Parameter (<em>ObservedPropoerty</em>) misst, erstellt.
+Der <em>Datastream</em> zu dieser Messreihe wird von <a class="reference internal" href="#node-red"><span class="std std-ref">Node-RED</span></a>
+alle 30 Sekunden mit zufälligen Daten gespeist. Die Servereinträge sind hier genauer
+beschrieben:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="SensorThingsAPI.html">SensorThingsAPI Example entries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SensorThingsAPI.html#thing">Thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SensorThingsAPI.html#sensor">Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SensorThingsAPI.html#observedproperty">ObservedProperty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SensorThingsAPI.html#datastream">Datastream</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>🚀 Hier geht es zu Testinstanz: <a class="reference external" href="https://sikla.gis.lrg.tum.de/test/frost">https://sikla.gis.lrg.tum.de/test/frost</a> 🚀</p>
+<div class="section" id="beispielabfragen-fur-die-testinstanz">
+<h4>Beispielabfragen für die Testinstanz<a class="headerlink" href="#beispielabfragen-fur-die-testinstanz" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>Die letzten 100 Messungen zum Download als CSV-Datei, z.B. als Input für
+Analysetools:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://sikla.gis.lrg.tum.de/test/frost/v1.1/Datastreams(1)/Observations?$ResultFormat=CSV&amp;$select=id,phenomenonTime,result&amp;$orderBy=phenomenonTime%20desc&amp;$top=100
+</pre></div>
+</div>
+</li>
+<li><p>Die letzten 100 Messungen als JSON, z.B. zur Verwendung in einer App:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://sikla.gis.lrg.tum.de/test/frost/v1.1/Datastreams(1)/Observations?$select=id,phenomenonTime,result&amp;$orderBy=phenomenonTime%20desc&amp;$top=100
+</pre></div>
+</div>
+</li>
+<li><p>Mehr SensorThingsAPI Beispiele: <a class="reference external" href="https://fraunhoferiosb.github.io/FROST-Server/sensorthingsapi/1_Home.html">https://fraunhoferiosb.github.io/FROST-Server/sensorthingsapi/1_Home.html</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="grafana">
+<h2>Grafana<a class="headerlink" href="#grafana" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/grafana-icon.jpg"><img alt="Grafana logo" class="align-right" src="../_images/grafana-icon.jpg" style="width: 70px;" /></a>
+<p>Grafana ist eine plattformübergreifende Open-Source-Anwendung zur grafischen
+Darstellung von Daten aus verschiedenen Datenquellen wie z. B. InfluxDB, MySQL,
+PostgreSQL, Prometheus und Graphite.
+Die erfassten Rohdaten lassen sich anschließend in verschiedenen Anzeigeformen ausgeben.
+Diese können dann zu sogenannten Dashboards zusammengefügt werden.
+Die Anzeigemöglichkeiten und Datenquellen können zudem mittels Plug-ins erweitert werden.
+Auf diese Weise wird auch der FROST-Server direkt unterstützt und es können Dashboards
+ohne zu programmieren in wenigen Klicks zusammengestellt werden.</p>
+<p class="rubric">Links</p>
+<ul class="simple">
+<li><p>Official webite: <a class="reference external" href="https://grafana.com/">https://grafana.com/</a></p></li>
+<li><p>Github: <a class="reference external" href="https://github.com/grafana/grafana">https://github.com/grafana/grafana</a></p></li>
+<li><p>LinkSmart OGC SensorThingsAPI Plugin: <a class="reference external" href="https://github.com/linksmart/grafana-sensorthings-datasource">https://github.com/linksmart/grafana-sensorthings-datasource</a></p></li>
+<li><p>📊 📈  <a class="reference external" href="https://sikla.gis.lrg.tum.de/test/grafana/d/EyOBeVZ7k/example-dashboard?orgId=1&amp;refresh=30s">Beispiel Dashboard</a>
+mit den Daten aus dem Testsensorknoten.</p></li>
+</ul>
+<div class="section" id="testinstanz-grafana">
+<h3>Testinstanz Grafana<a class="headerlink" href="#testinstanz-grafana" title="Permalink to this headline">¶</a></h3>
+<p>Die Testinstanz enthält aktuell zwei Datenquellen mit denen der
+<a class="reference internal" href="#frost-server"><span class="std std-ref">FROST-Server</span></a> abgefragt werden kann und ein
+Beispieldashboard, dass die künstlichen Daten visualisiert, die in
+<a class="reference internal" href="#node-red"><span class="std std-ref">Node-RED</span></a> erzeugt werden.</p>
+<p>🚀 Hier geht es zu Testinstanz: <a class="reference external" href="https://sikla.gis.lrg.tum.de/test/grafana">https://sikla.gis.lrg.tum.de/test/grafana</a> 🚀</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>User        admin
+Password    admin
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="node-red">
+<h2>Node-RED<a class="headerlink" href="#node-red" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/nodered-icon.png"><img alt="Node-RED icon" class="align-right" src="../_images/nodered-icon.png" style="width: 70px;" /></a>
+<p>Node-RED ist ein von IBM entwickeltes grafisches Entwicklungswerkzeug.
+Die Software ermöglicht es, Anwendungsfälle im Bereich des Internets der Dinge
+mit einem einfachen Baukastenprinzip umzusetzen. Die einzelnen Funktionsbausteine
+werden durch Ziehen von Verbindungen verbunden. Eine große Auswahl an mitgelieferten
+Bausteinen deckt die meisten der gängigsten Dienste und Technologien ab.
+Im Jahr 2016 hat IBM Node-RED als Open-Source-Software der JS-Foundation übertragen.</p>
+<p class="rubric">Links</p>
+<div class="section" id="testinstanz-node-red">
+<h3>Testinstanz Node-RED<a class="headerlink" href="#testinstanz-node-red" title="Permalink to this headline">¶</a></h3>
+<p>Die Testinstanz enthält aktuell einen Workflow, der alle 30 Sekunden einen
+zufälligen Wert erzeugt, der via HTTP POST Request als <em>Observation</em> dem Test
+<em>Datastream</em> im <a class="reference internal" href="#frost-server"><span class="std std-ref">FROST-Server</span></a> hinzufügt wird.</p>
+<p>🚀 Hier geht es zu Testinstanz: <a class="reference external" href="https://sikla.gis.lrg.tum.de/test/nodered">https://sikla.gis.lrg.tum.de/test/nodered</a> 🚀</p>
+</div>
+</div>
+<div class="section" id="keycloak">
+<h2>Keycloak<a class="headerlink" href="#keycloak" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/keycloak-icon.png"><img alt="Keycloak icon" class="align-right" src="../_images/keycloak-icon.png" style="width: 100px;" /></a>
+<p>Keycloak ist ein Open-Source-Softwareprodukt, das Single Sign-On mit Identity
+und Access Management für moderne Anwendungen und Dienste ermöglicht. Seit März
+2018 steht das WildFly-Community-Projekt unter der Obhut von Red Hat, die es als
+Upstream-Projekt für ihr RH-SSO-Produkt verwenden.</p>
+<p class="rubric">Funktionen</p>
+<ul class="simple">
+<li><p>User Registration</p></li>
+<li><p>Social login</p></li>
+<li><p>Single Sign-On/Sign-Off across all applications belonging to the same Realm</p></li>
+<li><p>2-factor authentication</p></li>
+<li><p>LDAP integration</p></li>
+<li><p>Kerberos broker</p></li>
+<li><p>Multitenancy with per-realm customizable skin</p></li>
+</ul>
+<p class="rubric">Links</p>
+<ul class="simple">
+<li><p>Official website: <a class="reference external" href="https://www.keycloak.org/">https://www.keycloak.org/</a></p></li>
+<li><p>Github: <a class="reference external" href="https://github.com/keycloak/keycloak">https://github.com/keycloak/keycloak</a></p></li>
+</ul>
+<div class="section" id="testinstanz-keycloak">
+<h3>Testinstanz Keycloak<a class="headerlink" href="#testinstanz-keycloak" title="Permalink to this headline">¶</a></h3>
+<p>Keycloak ist für die Testinstanz aktuell nicht aktiviert, damit alle Dienste
+unkompliziert ausprobiert werden können. Unter dem Link unten ist eine laufende
+Instanz erreichbar, um sich einen Überblick über die Weboberfläche und die
+Funktionen von Keycloak machen zu können.</p>
+<p>🚀 Hier geht es zu Testinstanz: <a class="reference external" href="https://sikla.gis.lrg.tum.de/test/auth">https://sikla.gis.lrg.tum.de/test/auth</a> 🚀</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>User        admin
+Password    admin
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="SensorThingsAPI.html" class="btn btn-neutral float-right" title="SensorThingsAPI Example entries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../lorawan/lorawan.html" class="btn btn-neutral float-left" title="LoRaWAN" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Bruno Willenborg.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
