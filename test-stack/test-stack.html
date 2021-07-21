@@ -212,7 +212,13 @@
 <p>Diese Seite beschreibt die IoT-Testinfrastruktur für das Projekt <em>Sicheres
 Klassenzimmer</em>. Die Infrastruktur ist vollständig auf Basis von Docker Container
 realisiert und kann daher sehr einfach in jeder gängigen Cloudplattform oder
-auf eigener Hardware ausgerollt werden.</p>
+auf eigener Hardware ausgerollt und instandgehalten werden.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Die im Folgeden aufgeführten Dienste sind zum Testen gedacht.
+Keine Sorge, es kann nichts kaputt gehen, bitte einfach experimentieren!!</p>
+<p>Bei Fragen/Problem bitte einfach melden.</p>
+</div>
 <p class="rubric">Ansprechpartner</p>
 <div class="line-block">
 <div class="line">Bruno Willenborg</div>
@@ -224,7 +230,7 @@ auf eigener Hardware ausgerollt werden.</p>
 </div>
 <div class="section" id="ubersicht">
 <span id="index-1"></span><h2>Übersicht<a class="headerlink" href="#ubersicht" title="Permalink to this headline">¶</a></h2>
-<p>Die Infrastruktur setzt nach einem LoRaWAN-Netwerkserver (egal von welchem Provider)
+<p>Die Infrastruktur setzt nach einem LoRaWAN-Netzwerkserver (egal von welchem Provider)
 an und bietet die folgenden Funktionen:</p>
 <ul class="simple">
 <li><p>Anbindung von beliebigen Netzwerkprovidern, auch Multiproviderlösungen sind möglich.</p></li>
@@ -239,11 +245,14 @@ Mit <a class="reference internal" href="#node-red"><span class="std std-ref">Nod
 im <a class="reference internal" href="#frost-server"><span class="std std-ref">FROST-Server</span></a> gespeichert. Von dort können die Daten
 mit standardisierten Request abgefragt werden und z.B. mit <a class="reference internal" href="#grafana"><span class="std std-ref">Grafana</span></a>
 visualisiert werden. Alle Dienste sind dabei via Single-SignOn durch <a class="reference internal" href="#keycloak"><span class="std std-ref">Keycloak</span></a>
-und HTTPS abgesichert. <a class="reference internal" href="#iot-overview"><span class="std std-numref">Abb. 1</span></a></p>
+und HTTPS abgesichert. <a class="reference internal" href="#iot-overview"><span class="std std-numref">Abb. 1</span></a> zeigt schematisch die hier beschriebene Systemarchitektur für
+LoRaWAN-Sensorknoten.</p>
 <div class="figure align-center" id="iot-overview">
 <a class="reference internal image-reference" href="../_images/iot-architecture.png"><img alt="IoT Infrastructure Overview" src="../_images/iot-architecture.png" style="width: 98%;" /></a>
 <p class="caption"><span class="caption-number">Abb. 1 </span><span class="caption-text">Übersicht über die LoRaWAN Sensordateninfrastruktur.</span><a class="headerlink" href="#iot-overview" title="Permalink to this image">¶</a></p>
 </div>
+<p>Die einzelnen Dienste sind im folgenden knapp beschrieben. Zu jedem Dienst gibt es eine laufende
+Testinstanz:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#frost-server"><span class="std std-ref">FROST-Server</span></a> ➡️ <a class="reference external" href="https://sikla.gis.lrg.tum.de/test/frost">https://sikla.gis.lrg.tum.de/test/frost</a></p></li>
 <li><p><a class="reference internal" href="#grafana"><span class="std std-ref">Grafana</span></a> ➡️ <a class="reference external" href="https://sikla.gis.lrg.tum.de/test/grafana">https://sikla.gis.lrg.tum.de/test/grafana</a></p></li>
