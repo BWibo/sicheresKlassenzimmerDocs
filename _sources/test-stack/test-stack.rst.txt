@@ -25,7 +25,7 @@ auf eigener Hardware ausgerollt und instandgehalten werden.
 .. rubric:: Ansprechpartner
 
 | Bruno Willenborg
-| Technische universität München (TUM)
+| Technische Universität München (TUM)
 | Lehrstuhl für Geoinformatik
 | b.willenborg(at)tum.de
 | +49 89 289-22973
