@@ -183,7 +183,7 @@ Beispieldashboard, dass die künstlichen Daten visualisiert, die in
 .. code-block:: text
 
   User        admin
-  Password    admin
+  Password    changeMe!
 
 *******************************************************************************
 Node-RED
