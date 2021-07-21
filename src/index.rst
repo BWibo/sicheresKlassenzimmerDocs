@@ -9,7 +9,7 @@ Welcome to the IoT-Test Stack for the proejct *Sicheres Klassenzimmer*.
   :caption: Contents:
 
   lorawan/lorawan
-  test-stack/test.stack
+  test-stack/test-stack
 
 *******************************************************************************
 Indices and tables
