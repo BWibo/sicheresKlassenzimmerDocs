@@ -41,7 +41,7 @@ an und bietet die folgenden Funktionen:
 
 * Anbindung von beliebigen Netzwerkprovidern, auch Multiproviderlösungen sind möglich.
 * Persistente Speicherung von Sensordaten sowie von Informationen/Metadaten
-  zu Sensorkoten, Sensoren, Messgrößen und Datenströmen.
+  zu Sensorknoten, Sensoren, Messgrößen und Datenströmen.
 * Bereitstellung der Daten über die OGC SensorThingsAPI, die mächtige
   Abfrageoptionen für Sensordaten/Metadaten bietet und leicht zu erlernen ist.
 * Alle Softwarekomponenten und Formate sind |:free:| OpenSource |:peace:|
@@ -113,7 +113,7 @@ Testinstanz FROST-Server
 ===============================================================================
 
 In der Testinstanz wurden Beispieleinträge für einen Sensorknoten (*Thing*) mit
-einem *Sensor*, der einen phys. Parameter (*ObservedPropoerty*) misst, erstellt.
+einem *Sensor*, der einen phys. Parameter (*ObservedProperty*) misst, erstellt.
 Der *Datastream* zu dieser Messreihe wird von :ref:`test-stack/test-stack:Node-RED`
 alle 30 Sekunden mit zufälligen Daten gespeist. Die Servereinträge sind hier genauer
 beschrieben:
@@ -163,7 +163,7 @@ ohne zu programmieren in wenigen Klicks zusammengestellt werden.
 
 .. rubric:: Links
 
-* Official webite: https://grafana.com/
+* Official website: https://grafana.com/
 * Github: https://github.com/grafana/grafana
 * LinkSmart OGC SensorThingsAPI Plugin: https://github.com/linksmart/grafana-sensorthings-datasource
 * |:bar_chart:| |:chart_with_upwards_trend:|  `Beispiel Dashboard <https://sikla.gis.lrg.
