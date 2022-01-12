@@ -2,7 +2,7 @@
 Sicheres Klassenzimmer
 ###############################################################################
 
-Welcome to the IoT-Test Stack for the proejct *Sicheres Klassenzimmer*.
+Welcome to the IoT-Test Stack for the project *Sicheres Klassenzimmer*.
 
 .. toctree::
   :maxdepth: 3
